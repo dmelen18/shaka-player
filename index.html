@@ -14,14 +14,30 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=demo/">
-    <title>Shaka Player Demo</title>
-  </head>
-  <body>
-    You should be automatically redirected to the demo.
-    If not, please <a href="demo/">click here</a>.
-  </body>
+<html>
+    <head>
+      <!-- Shaka Player compiled library: -->
+      <script src="dist/shaka-player.compiled.js"></script>
+      <script src="https://github.com/videojs/mux.js/releases/latest/download/mux.js"></script>
+      <!-- Your application source: -->
+      <script src="myapp.js"></script>
+      
+    </head>
+    <body>
+      <video id="video"
+      width="640"
+      onended = "next()"
+      poster="//shaka-player-demo.appspot.com/assets/poster.jpg"
+      autoplay
+      controls 
+      ></video>
+          <div>
+          <p>
+              <button type = "button" onclick = "next()">Next</input>
+          </p>
+        </div>
+          <p><form><input type="text" id="link" name="link" value="https://s3.amazonaws.com/_bc_dml/example-content/sintel_dash/sintel_vod.mpd">
+            <input type = "submit" value = "Try" onclick = "document.getElementById('video').src = document.getElementById('link')">
+            </p>
+    </body>
 </html>
